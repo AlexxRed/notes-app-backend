@@ -1,9 +1,10 @@
-const app = require('./app')
-const mongoose = require('mongoose');
+import app from './app';
+import mongoose from 'mongoose';
+import 'dotenv/config';
+
 const { DB_HOST } = process.env
 
-
-mongoose.connect(DB_HOST)
+mongoose.connect(DB_HOST!)
   .then(()=>console.log("Database connection successful"))
   .catch(error => { 
     console.log(error.message);
