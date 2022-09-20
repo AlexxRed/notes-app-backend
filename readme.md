@@ -10,11 +10,17 @@
 4. встановити всі залежності 'npm i'
 5. Отримання запитів з бази данних
    http://localhost:5000/api/notes/ - Get all notes.
+   
    http://localhost:5000/api/notes/ - Create a note object.
+   
    http://localhost:5000/api/notes/63299ef18be532620921f47e - Retrieve item.
    
    http://localhost:5000/api/notes/:id - Remove item.
+   
    http://localhost:5000/api/notes/:id - Edit item.
+   
    http://localhost:5000/api/notes/archive - Get archive notes.
+   
    http://localhost:5000/api/notes/stats - All notes statistic.
+   
    http://localhost:5000/api/notes/:id/archive - Change archive or not
