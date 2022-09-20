@@ -13,7 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/AlexxRed/notes-app-backend.git"
   },
-  "type": "commonjs",
   "author": "",
   "license": "ISC",
   "bugs": {
