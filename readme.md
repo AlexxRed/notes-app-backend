@@ -9,6 +9,7 @@
 3. Запустити сервер в режимі розробки 'npm run start:dev'
 4. встановити всі залежності 'npm i'
 5. Отримання запитів з бази данних
+
    http://localhost:5000/api/notes/ - Get all notes.
    
    http://localhost:5000/api/notes/ - Create a note object.
