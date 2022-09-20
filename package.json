@@ -4,10 +4,8 @@
   "description": "notes-app-backend",
   "main": "server.ts",
   "scripts": {
-    "build": "tsc",
     "start": "cross-env NODE_ENV=production ts-node ./server.ts",
     "start:dev": "cross-env NODE_ENV=development nodemon ./server.ts",
-    "postinstall": "npm run tsc",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.ts"
   },
