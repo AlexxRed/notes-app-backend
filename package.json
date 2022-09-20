@@ -5,11 +5,10 @@
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
-    "tsc": "./node_modules/typescript/bin/tsc",
-    "start": "cross-env NODE_ENV=production node ./server.ts",
+    "start": "cross-env NODE_ENV=production ts-node ./server.ts",
     "start:dev": "cross-env NODE_ENV=development nodemon ./server.ts",
     "postinstall": "npm run tsc",
-    "lint": "eslint **/*.ts",
+    "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.ts"
   },
   "repository": {
