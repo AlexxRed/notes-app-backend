@@ -5,4 +5,5 @@ export interface INote {
   created?: number;
   content: string;
   dates?: string;
+  archive?: boolean;
 }

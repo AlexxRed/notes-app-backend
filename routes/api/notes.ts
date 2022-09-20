@@ -1,25 +1,36 @@
-import ctrlWrapper  from '../../middlewares/ctrlWrapper';
-import { add, remove, getAll, getById, updateById } from '../../controllers/notes';
+import ctrlWrapper from '../../middlewares/ctrlWrapper';
+import validation from '../../middlewares/validation';
+import { JoiNoteCreationSchema } from '../../helpers/joiValidation/JoiNoteCreationSchema';
+import {
+    add,
+    remove,
+    getAll,
+    getById,
+    updateById,
+    getStats,
+    updateByArchive,
+    getArchive
+} from '../../controllers/notes';
 import { Router } from 'express';
-// const { validation } = require('../../middlewares/validation')
+
 
 
 
 
 const notesRouter: Router = Router();
 
-// notesRouter.get('/', ctrlWrapper(ctrl.getAll))
+notesRouter.get('/', ctrlWrapper(getAll))
+notesRouter.get('/archive', ctrlWrapper(getArchive))
+notesRouter.get('/stats', ctrlWrapper(getStats))
 
-// notesRouter.get('/:id', ctrl.getById)
+notesRouter.get('/:id', ctrlWrapper(getById))
 
-notesRouter.post('/',  ctrlWrapper(add))
+notesRouter.post('/',  validation(JoiNoteCreationSchema), ctrlWrapper(add))
 
-// notesRouter.delete('/:id', ctrlWrapper(ctrl.remove))
+notesRouter.delete('/:id', ctrlWrapper(remove))
 
-// notesRouter.put('/:id', ctrlWrapper(ctrl.updateById))
+notesRouter.put('/:id', ctrlWrapper(updateById))
 
-// notesRouter.get('/statats', ctrl.getStats)
-
-// notesRouter.patch('/:contactId/favorite', ctrlWrapper(ctrl.updateByFavorite))
+notesRouter.patch('/:id/archive', ctrlWrapper(updateByArchive))
 
 export default notesRouter

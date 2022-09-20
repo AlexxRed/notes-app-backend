@@ -1,8 +1,11 @@
 import { Schema, model } from 'mongoose';
 import { INote } from '../types/note.type';
 
-const noteSchema = new Schema(
-    {
+const noteSchema = new Schema<INote>(
+  {
+        id: {
+          type: String,
+        },
         name: {
           type: String,
           required: [true, 'Set name for note'],
@@ -21,10 +24,9 @@ const noteSchema = new Schema(
         dates: {
           type: String,
         },
-        owner: {
-          type: Schema.Types.ObjectId,
-          ref: 'user',
-      }
+        archive: {
+          type: Boolean,
+        },
     },
     { versionKey: false, timestamps: true },
 );

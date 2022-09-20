@@ -1,12 +1,12 @@
 import Note from '../../models/Note';
 import { Request, Response, NextFunction } from 'express';
 
-export const updateFavorite = async (req: Request, res: Response, next: NextFunction) => {
+export const updateByArchive = async (req: Request, res: Response, next: NextFunction) => {
     const { id } = req.params;
-    const { favorite } = req.body;
+    const { archive } = req.body;
     const result = await Note.findByIdAndUpdate(
         id,
-        { favorite },
+        { archive },
         { new: true }
     );
     res.json(result);
