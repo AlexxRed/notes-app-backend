@@ -4,13 +4,11 @@
   "description": "notes-app-backend",
   "main": "server.ts",
   "scripts": {
-    "tsc": "tsc",
     "build": "tsc",
-    "watch-tsc": "tsc -w",
-    "deploy": "node server.ts",
-    "watch-deploy": "nodemon server.ts",
-    "start": "node build ./server.ts",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "start": "cross-env NODE_ENV=production node ./server.ts",
     "start:dev": "cross-env NODE_ENV=development nodemon ./server.ts",
+    "postinstall": "npm run tsc",
     "lint": "eslint **/*.ts",
     "lint:fix": "eslint --fix **/*.ts"
   },
